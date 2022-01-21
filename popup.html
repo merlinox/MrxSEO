@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>MrxSEO - Main Meta Tags Highlighter</title>
+        <script src="popup.js"></script>
+        <style>
+            body{
+                padding: 1em 0.5em 0 0.5em;
+                margin: 0;
+                width: 500px;
+				background-color: #333;
+				color: white;
+            }
+            body, table, td, button{
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 11px;
+            }
+           
+			h1{
+				margin: 0;
+				padding: 0 0 0.5em 0;
+			}
+			a{
+				color: #6CF;
+			}
+            ol{
+                padding: 0.5em;
+                margin: 0 0 0 1.5em;
+            }
+            fieldset{
+                padding: 0.5em;
+                margin: 0 0 1em 0;
+            }
+            legend{
+                color: #ff6600;
+            }
+            #footer{
+                font-size: 75%;
+                text-align: right;
+                margin: 1em 0 1em 0;
+            }
+			#content{
+				margin: 0 0 1.5em 0;
+			}
+            #dCurrent{
+                margin-bottom: 1em;
+            }
+            #current a{
+                color: #fff;
+            }
+            
+            li{
+                clear: left;
+            }
+            table.hreflang tr:first-child {
+                padding-left: 0.5em;
+            }
+            table.hreflang td{
+                margin: 0;
+                padding: 0;
+            }
+            .len{
+                color: #ffcc00;
+            }
+            #dTitle{
+                color: #ffcc00;
+            }
+            .button button{
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SEOMrx Meta Inspector</h1>
+		<div id="imgNoSize" class="button"><button id="imgNoSizeBt" title="In Console you will check every img tags without width|height">Img NoSize</button></div>
+        <div id="nofollow" class="button"><button id="nofollowBt">Highlight Nofollow</button></div>
+        <div id="content">Check canonical, hreflang, amp and meta tag values</div>
+
+        <fieldset>
+            <legend>Current URL</legend>
+            <div id="dCurrent">/div>
+        </fieldset>
+       
+        <fieldset>
+            <legend>Canonical</legend>
+            <div id="dCanonical"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Hreflangs</legend>
+            <div id="dHreflang"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Meta Robots</legend>
+            <div id="dMetaRobots"></div>
+        </fieldset>
+        <fieldset>
+            <legend>AMP</legend>
+            <div id="dAmp"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Meta Title &amp; Description</legend>
+            <div id="dTitle"></div>
+            <div id="dMetaDesc"></div>
+        </fieldset>
+        <div id="footer"><span id="currentVersion"></span> - by <a href="https://twitter.com/merlinox" target="_blank">@Merlinox</a></div>
+    </body>
+    </html>
