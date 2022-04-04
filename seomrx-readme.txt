@@ -1,3 +1,4 @@
+1.9 20220404    Removed activeTab permission (requested by Google)
 1.7 20210804	Img without width|height
 1.6 20210127    Nofollow Highlighter
 1.5 20210125    Icon alerting
