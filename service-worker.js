@@ -2,7 +2,7 @@
 chrome.runtime.onMessage.addListener(
 	function (request, sender, sendResponse) {
 
-		chrome.browserAction.setBadgeText({ text: request.alertIcon });
+		chrome.action.setBadgeText({ text: request.alertIcon });
 
 		// Note: Returning true is required here!
 		//  ref: http://stackoverflow.com/questions/20077487/chrome-extension-message-passing-response-not-sent

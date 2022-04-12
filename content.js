@@ -15,6 +15,17 @@ function logmeVoid(t) {
 }
 
 
+function getUrl() {
+  logmeVoid("getUrl");
+  var cs = document.location.href;
+  return cs;
+}
+function getTitle() {
+  logmeVoid("getTitle");
+  var cs = document.title;
+  return cs;
+}
+
 function getCanonicals() {
   var cs = document.querySelectorAll("link[rel='canonical']");
   return cs;
@@ -122,21 +133,21 @@ function noFollowHighlighter() {
 //https://gist.github.com/akirattii/2f55bb320f414becbc42bbe56313a28b
 
 
-function imgNoSize(){
-	logmeVoid("imgNoSize starts");
-	n = 0;
-	is = document.getElementsByTagName("img");
-	rsIs = [];
-	for (i=0;i<is.length;i++){
-		if (is[i].getAttribute("width") == null || is[i].getAttribute("height") == null){
-			n++;
-			rsIs.push(is[i]);
-		}
-	}
-	console.group("getImageWithoutDimensions");
-	console.log(rsIs);
-	console.groupEnd();
-	return rsIs;
+function imgNoSize() {
+  logmeVoid("imgNoSize starts");
+  n = 0;
+  is = document.getElementsByTagName("img");
+  rsIs = [];
+  for (i = 0; i < is.length; i++) {
+    if (is[i].getAttribute("width") == null || is[i].getAttribute("height") == null) {
+      n++;
+      rsIs.push(is[i]);
+    }
+  }
+  console.group("getImageWithoutDimensions");
+  console.log(rsIs);
+  console.groupEnd();
+  return rsIs;
 }
 
 
@@ -153,6 +164,14 @@ chrome.runtime.onMessage.addListener(
         break;
       case "getCanonicals":
         rs = window.getCanonicalHrefs();
+        sendResponse({ farewell: rs });
+        break;
+      case "getUrl":
+        rs = window.getUrl();
+        sendResponse({ farewell: rs });
+        break;
+      case "getTitle":
+        rs = window.getTitle();
         sendResponse({ farewell: rs });
         break;
       case "getHreflangs":
@@ -175,7 +194,7 @@ chrome.runtime.onMessage.addListener(
         rs = window.noFollowHighlighter();
         sendResponse({ farewell: rs });
         break;
-	  case "imgNoSize":
+      case "imgNoSize":
         rs = window.imgNoSize();
         sendResponse({ farewell: rs });
         break;
