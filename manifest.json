@@ -2,7 +2,7 @@
   "name": "MrxSEO - Light MetaTags Highlighter",
   "description": "Show the main SEO tags in the page: canonical(s), hreflangs, robots, amps",
   "author": "Merlinox",
-  "version": "2.0",
+  "version": "2.1",
   "background": {
     "service_worker": "service-worker.js"
   },

@@ -1,3 +1,4 @@
+2.1 20220414    Fix robots.txt button e version from manifest in popup (last readme then git!)
 2.0 20220412    Manifest v3
 1.9 20220404    Removed activeTab permission (requested by Google)
 1.7 20210804	Img without width|height

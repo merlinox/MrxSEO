@@ -1,4 +1,4 @@
-var currentVersion = "2.0";
+var currentVersion = chrome.runtime.getManifest().version;
 var currentTab = "";
 var differentUrlSign = "&#9888;&#65039;";
 var currentUrl = "";
@@ -132,10 +132,10 @@ function robotsTxt(){
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.sendMessage(tabs[0].id, { action: "getUrl" }, function (response) {
       var rs = response.farewell;
-      var re = new RegExp(/^.*\//);
-      var rUrl = re.exec(rs + "robots.txt").input;
+      var re = new RegExp(/(https?:\/\/[^\/]+)/);
+      var rUrl = re.exec(rs)[0] + "/robots.txt";
       console.log(rUrl);
-      chrome.tabs.create({ url: rUrl });
+      //chrome.tabs.create({ url: rUrl });
     });
   });
   console.groupEnd();
